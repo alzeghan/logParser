@@ -8,6 +8,4 @@ docker-compose run --rm --name backend-container python3 manage.py runserver
 docker-compose stop
 docker rm backend_container
 docker container ls -a
-
-
 docker-compose up --build
