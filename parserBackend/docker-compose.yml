@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  app-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+        - .:/usr/src/app-backtend
+    ports:
+        - "8000:8000"
+    image: backend
+    container_name: backend_container
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'TAMATEM'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+      # volumes:
+      #   - ./data/mysql/db:/var/lib/mysql

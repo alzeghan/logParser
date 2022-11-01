@@ -226,8 +226,7 @@ class isLoggedInView(generics.CreateAPIView):
 
     def post(self, request, format=None):
         try:
-            print('will logout')
-            print(permission_classes)
+            # print(permission_classes)
             # serializer_class = serializers.RegisterSerializer
             logout(request)
             print('logout user successfully')

@@ -1,0 +1,13 @@
+docker build --tag log-parser-backend .
+docker run --publish 8000:8000 log-parser-backend
+
+docker-compose build
+docker-compose run app web /usr/local/bin/python3 manage.py migrate
+docker-compose run app
+docker-compose run --rm --name backend-container python3 manage.py runserver
+docker-compose stop
+docker rm backend_container
+docker container ls -a
+
+
+docker-compose up --build
