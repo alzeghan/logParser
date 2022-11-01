@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  app-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+        - .:/usr/src/app-frontend
+    ports:
+        - "8081:8081"
+    image: parser-frontend
+    container_name: frontend_container

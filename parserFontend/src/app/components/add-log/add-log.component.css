@@ -1,0 +1,35 @@
+.log-table {
+  border: 1px solid #eee;
+  font-size: 16px;
+  text-align: center;
+  background: #aaf0d133;
+  margin: 0 auto;
+}
+.log-table-raw {
+  border: 1px solid #eee;
+
+}
+.upload-form{
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  max-width: 30%;
+  padding: 20px;
+}
+.btn-primary{
+  padding: 12px;
+  width: 200px;
+  margin-top: 10px;
+
+}
+.hint {
+  font-size: 14px;
+  font-weight: 500;
+  color: green;
+}
+.container{
+      text-align: center !important;
+}
+
+label {
+  font-size: 14px;
+}

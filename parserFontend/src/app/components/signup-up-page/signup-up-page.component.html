@@ -1,0 +1,21 @@
+<div>
+    <h3>Create An Account</h3>
+      <form class="login-form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <div>
+            <div *ngIf="errorMessage" class="error">
+              {{ errorMessage |json}}
+            </div>
+          <label for="email">Email</label>
+          <input formControlName="email"  type="email"  required>
+          <label for="username">Username</label>
+          <input formControlName="username"  type="text"  required>
+          <label for="password">Password</label>
+          <input formControlName="password"  type="password">
+        </div>
+        <br/>
+        <button>Submit</button>
+        <span>Already have an account?
+        <a routerLink="/login">signin</a></span>
+
+      </form>
+  </div>

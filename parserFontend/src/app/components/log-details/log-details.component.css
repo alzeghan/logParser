@@ -1,0 +1,25 @@
+.log-table {
+  border: 1px solid #eee;
+  font-size: 12px;
+  text-align: center;
+  margin: 0 auto;
+}
+.log-table-raw {
+  border: 1px solid #eee;
+
+}
+.flagged-raw{
+  color: red;
+}
+.upload-form{
+
+  border: 1px solid #ddd;
+  max-width: 30%;
+  padding: 20px;
+}
+.btn-primary{
+  padding: 20px;
+  width: 200px;
+  margin-top: 10px;
+
+}

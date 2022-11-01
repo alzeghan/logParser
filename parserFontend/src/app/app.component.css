@@ -1,0 +1,31 @@
+button {
+    width: 140px;
+    padding: 8px;
+    position: absolute;
+    right: 10%;
+    display: inline-block;
+}
+.navbar-brand{
+  font-size: 22px;
+  font-weight: 500;
+}
+.navbar-nav{
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px;
+}
+.container{
+      text-align: center !important;
+}
+.btn-success {
+  background-color: #f8a848;
+  border: 0px solid;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+}
+.login-form {
+  /* text-align: center; */
+  margin-top: 4%;
+  padding: 60px;
+}

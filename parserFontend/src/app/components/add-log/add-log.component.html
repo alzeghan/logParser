@@ -1,0 +1,91 @@
+<div *ngIf="errorMessage" class="error">
+  {{ errorMessage}}
+</div>
+<!-- <button class="btn btn-success" (click)="logout()">Logout</button> -->
+<!-- <div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="file_name">File Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="file_name"
+          required
+          [(ngModel)]="log.file_name"
+          name="file_name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="log.description"
+          name="description"
+        />
+      </div>
+
+      <button (click)="saveLog()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Log was submitted successfully!</h4>
+
+      <button class="btn btn-success" (click)="newLog()">Add</button>
+    </div>
+  </div>
+</div> -->
+<!-- <ul>
+<li *ngFor="let lg of loadedLogs">
+        {{ lg['owner'] }}
+      </li>
+</ul> -->
+
+
+<h2>Manage uploaded Log Files</h2>
+<p class="hint">*Click on File Id for Log details</p>
+<table class="log-table" border=1>
+        <thead>
+            <tr>
+                <th>File Id</th>
+                <th>File Path</th>
+                <th>Description</th>
+                <th>File name</th>
+                <th>Log Owner</th>
+            </tr>
+        </thead>
+        <tr class="log-table-raw" *ngFor="let lg of loadedLogs">
+            <td class="log-table-raw"><a [routerLink]="['/log-details', lg['id'] ]">{{ lg['id'] }} </a>
+              <!-- <button type="button" (click)="onSelect(lg['id'], lg['owner'])"> {{ lg['id'] }} </button> -->
+              </td>
+            <td class="log-table-raw"> {{lg['path']}} </td>
+            <td class="log-table-raw"> {{lg['description']}} </td>
+            <td class="log-table-raw"> <a [routerLink]="['/log-details', lg['id'] ]">{{lg['file_name']}} </a></td>
+            <td class="log-table-raw"> {{lg['owner']}} </td>
+        </tr>
+    </table>
+
+
+
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+
+<br/><br/>
+    <h3>Upload New Log Files</h3>
+    <div class="upload-form form-group">
+        <label for="file">Upload File: </label>
+        <input
+            formControlName="file"
+            id="file"
+            type="file"
+            class="form-control"
+            (change)="onFileChange($event)">
+        <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+            <div *ngIf="f['file'].errors && f['file'].errors['required']">File is required.</div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" [disabled]="myForm.invalid" type="submit">Submit</button>
+</form>

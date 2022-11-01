@@ -1,0 +1,19 @@
+<div>
+    
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+          <h3>Login</h3>
+        <div *ngIf="errorMessage" class="error">
+          {{ errorMessage |json}}
+        </div>
+        <div class="login-container">
+          <label for="username">Username</label>
+          <input  formControlName="username" required  type="text">
+          <label for="password">Password</label>
+          <input formControlName="password" type="password">
+          <button>Submit</button>
+        </div>
+
+        <span>Don't have an account?
+        <a routerLink="/signup">signUp</a></span>
+      </form>
+  </div>

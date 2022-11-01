@@ -1,0 +1,18 @@
+
+
+<table class="log-table" >
+        <thead>
+            <tr>
+                <!-- <th>File Number</th> -->
+                <th>Creation Date</th>
+                <th>Raw Number</th>
+                <th>Log details </th>
+            </tr>
+        </thead>
+        <tr *ngFor="let lg of loadedLogs">
+            <!-- <td> {{lg['log_file_id']}} </td> -->
+            <td class="log-table-raw"> {{lg['created_at']}} </td>
+            <td class="log-table-raw"> {{lg['raw_number']}} </td>
+            <td class="log-table-raw flagged-raw"> {{lg['raw_text']}} </td>
+        </tr>
+    </table>
